@@ -1,0 +1,22 @@
+apiVersion: v2
+name: server-monitoring
+description: A basic Kubernetes server monitoring stack using Prometheus and Node Exporter.
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+home: https://iserversupport.com/cloud-server-management/
+
+sources:
+  - https://github.com/iadminiserversupport/helm-server-monitoring
+
+maintainers:
+  - name: iServerSupport
+
+keywords:
+  - monitoring
+  - prometheus
+  - node-exporter
+  - server
+  - kubernetes
+  - infrastructure

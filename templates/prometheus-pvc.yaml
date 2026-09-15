@@ -1,0 +1,17 @@
+{{- if .Values.prometheus.storage.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "server-monitoring.fullname" . }}-prometheus
+  labels:
+    {{- include "server-monitoring.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.prometheus.storage.size }}
+  {{- if .Values.prometheus.storage.storageClass }}
+  storageClassName: {{ .Values.prometheus.storage.storageClass | quote }}
+  {{- end }}
+{{- end }}
